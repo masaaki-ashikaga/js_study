@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  
+  <script>
+    const members = [
+      {name: '山田太郎', old: 42, habit:'ギター'},
+      {name: '斎藤すぐる', old: 46, habit:'車'},
+      {name: '田中よしお', old: 32, habit:'旅行,カメラ'},
+      {name: '高橋とおる', old: 25, habit:'絵を描くこと'},
+    ];
+    
+    const forty = members.filter(function(member){
+      return member.old >= 40 && member.old < 50;
+    });
+    const thirty = members.filter(function(member){
+      return member.old >= 30 && member.old < 40;
+    });
+    const twenty = members.filter(function(member){
+      return member.old >= 20 && member.old < 30;
+    });
+
+    console.log(forty);
+    console.log(thirty);
+    console.log(twenty);
+
+  </script>
+  
+</body>
+</html>
