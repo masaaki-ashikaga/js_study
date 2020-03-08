@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  
+  <script>
+    //宿題２  じゃんけんゲーム
+    const myHand = prompt("「グー」、「チョキ」、「パー」どれかを入力");
+    const partnerHand = Math.floor(Math.random() * 3);  //0-3の整数
+    
+    if(partnerHand === 0){
+      const partnerHand = 'グー';
+      switch(myHand){
+        case "チョキ":
+        alert ('あなた：チョキ　相手：グー　あなたの負け');
+        break;
+        case "パー":
+        alert ('あなた：パー　相手：グー　あなたの勝ち');
+        break;
+        default:
+        alert ('あなた：グー　相手：グー　あいこ');
+        break;
+      }
+    }else if(partnerHand === 1){
+      const partnerHand = 'チョキ';
+      switch(myHand){
+        case "パー":
+        alert ('あなた：パー　相手：チョキ　あなたの負け');
+        break;
+        case "グー":
+        alert ('あなた：グー　相手：チョキ　あなたの勝ち');
+        break;
+        default:
+        alert ('あなた：チョキ　相手：チョキ　あいこ');
+        break;
+      }
+    }else{
+      const partnerHand = 'パー';
+      switch(myHand){
+        case "グー":
+        alert ('あなた：グー　相手：パー　あなたの負け');
+        break;
+        case "チョキ":
+        alert ('あなた：チョキ　相手：パー　あなたの勝ち');
+        break;
+        default:
+        alert ('あなた：パー　相手：パー　あいこ');
+        break;
+      }
+    };
+  </script>
+  
+</body>
+</html>
