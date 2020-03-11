@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+    
+  <style>
+    body{
+      text-align: center;
+      margin-top: 100px
+    }
+    #color{
+      height: 100px;
+      text-align: center;
+      font-size: 70px;
+    }
+    #btn{
+      width: 200px;
+      height: 200px;
+      font-size: 50px;
+      border-radius: 50%;
+      background: tomato;
+      cursor: pointer;
+      text-decoration: none;
+      box-shadow: 0px -7px 2px 0px red inset;
+      outline: none;
+    }
+    #btn:active{
+      margin-top: 2px;
+      box-shadow: 0px -3px 2px 0px red inset;
+    }
+
+  </style>
+</head>
+
+<body>
+    <p id="color"></p>
+    <button id="btn">診断</button>
+
+  <script>
+    document.getElementById('btn').addEventListener('click', function(){
+      const num = Math.floor(Math.random() * 5);
+      let color = document.getElementById('color');
+      if(num === 0){
+      color.style.color = '#0000ff';
+      color.textContent = '青';
+      }else if(num === 1){
+      color.style.color = '#ff0000';
+      color.textContent = '赤';
+      }else if(num === 2){
+      color.style.color = '#ffff00';
+      color.textContent = '黄';
+      }else if(num === 3){
+      color.style.color = '#008000';
+      color.textContent = '緑';
+      }else if(num === 4){
+      color.style.color = '#800080';
+      color.textContent = '紫';
+      }
+    }) 
+  </script>
+  
+</body>
+</html>
