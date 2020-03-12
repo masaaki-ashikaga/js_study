@@ -4,30 +4,38 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-
-  <style>
-    body{
-      padding-top: 50px;
-      text-align: center;
-    }
-    #inputLog{
-      border-bottom: 1px solid #000;
-      width : 150px;
-      margin: 80px auto;
-    }
-  </style>
+    
 </head>
 
 <body>
-    <input id="input">
-    <p id="inputLog"></p>
+
+      <textarea></textarea>
+      <p id="log">0</p>
+      <p id ="caution"></p>
+
+
   <script>
+    //window.onloadの使い方わからない。
+    window.onload = function(){
 
-    const input = document.querySelector('input');
-    input.addEventListener('onkeyup', e => {
-      console.log(e.key);
+    const textarea = document.querySelector('textarea');
+    const log = document.getElementById('log');
+    const caution = document.getElementById('caution');
+
+    textarea.addEventListener('keyup', function(){
+      const output = textarea.value.replace(/\s+/g, "");  //正規表現の意味わからない。
+      const length = output.trim().length;  //trim()の使い方いまいちわからない。
+      log.textContent = length;
+      if(length > 10){
+        log.style.color = '#ff0000';
+        caution.style.color = '#ff0000';
+        caution.textContent = '10文字以内にしてください';
+      }else if(length <= 10){
+        log.style.color = '#000';
+        caution.textContent = '';
+      }
     });
-
+    }
 
   </script>
   
