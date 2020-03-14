@@ -15,6 +15,21 @@
 
 
   <script>
+    const textArea = document.getElementById('textArea');
+      const strLen = document.getElementById('strLen');
+
+      textArea.onkeyup = function(){
+        const len = document.getElementById('textArea').value.length;
+        strLen.innerText = len + '文字';
+
+        if( len >= 10 ){
+          strLen.style.color = 'red';
+          strLen.innerText = '10文字以上では送信できません';
+        } else if(len < 10){
+          strLen.style.color = '#333';
+        }
+      }
+    
     window.onload = function(){
 
     const textarea = document.querySelector('textarea');
