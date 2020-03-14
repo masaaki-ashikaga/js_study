@@ -15,7 +15,6 @@
 
 
   <script>
-    //window.onloadの使い方わからない。
     window.onload = function(){
 
     const textarea = document.querySelector('textarea');
@@ -23,8 +22,8 @@
     const caution = document.getElementById('caution');
 
     textarea.addEventListener('keyup', function(){
-      const output = textarea.value.replace(/\s+/g, "");  //正規表現の意味わからない。
-      const length = output.trim().length;  //trim()の使い方いまいちわからない。
+      const output = textarea.value.replace(/\s+/g, "");
+      const length = output.trim().length;
       log.textContent = length;
       if(length > 10){
         log.style.color = '#ff0000';
